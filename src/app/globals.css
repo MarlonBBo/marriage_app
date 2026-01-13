@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 :root {
+  /* Lock interface to light palette (no dark mode) */
+  color-scheme: light;
   --tone-cream: #fdf9f4;
   --tone-beige: #f5ede2;
   --tone-gold: #d4af37;
