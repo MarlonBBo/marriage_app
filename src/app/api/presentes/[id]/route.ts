@@ -1,7 +1,5 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { query } from "@/lib/db";
-
-type Params = { params: { id: string } };
 
 const parseId = (value: string) => {
   const id = Number(value);
@@ -9,8 +7,9 @@ const parseId = (value: string) => {
   return id;
 };
 
-export async function GET(_req: Request, { params }: Params) {
-  const id = parseId(params.id);
+export async function GET(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id: rawId } = await params;
+  const id = parseId(rawId);
   if (!id) return NextResponse.json({ error: "ID inválido" }, { status: 400 });
 
   try {
@@ -33,8 +32,9 @@ export async function GET(_req: Request, { params }: Params) {
   }
 }
 
-export async function PUT(req: Request, { params }: Params) {
-  const id = parseId(params.id);
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id: rawId } = await params;
+  const id = parseId(rawId);
   if (!id) return NextResponse.json({ error: "ID inválido" }, { status: 400 });
 
   const payload = await req.json();
@@ -65,8 +65,9 @@ export async function PUT(req: Request, { params }: Params) {
   }
 }
 
-export async function DELETE(_req: Request, { params }: Params) {
-  const id = parseId(params.id);
+export async function DELETE(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id: rawId } = await params;
+  const id = parseId(rawId);
   if (!id) return NextResponse.json({ error: "ID inválido" }, { status: 400 });
 
   try {
