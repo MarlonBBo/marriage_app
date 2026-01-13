@@ -178,6 +178,13 @@ export default function Home() {
     }
   };
 
+  const sortedGifts = [...gifts].sort((a, b) => {
+    const aTaken = Boolean(a.idconvidado);
+    const bTaken = Boolean(b.idconvidado);
+    if (aTaken !== bTaken) return aTaken ? 1 : -1; // disponíveis em cima
+    return a.nome.localeCompare(b.nome, "pt-BR");
+  });
+
   return (
     <div className="bg-[var(--color-cream)] text-[var(--color-text)]">
       {/* Hero Section */}
@@ -324,7 +331,7 @@ export default function Home() {
                 <p className="text-sm text-[var(--color-muted)]">Carregando presentes...</p>
               ) : (
                 <div className="grid gap-2">
-                  {gifts.map((gift) => {
+                  {sortedGifts.map((gift) => {
                     const isReceived = Boolean(gift.idconvidado);
                     const isSelected = selectedPresetIds.includes(gift.id);
 
