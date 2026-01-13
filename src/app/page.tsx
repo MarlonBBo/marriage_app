@@ -184,7 +184,7 @@ export default function Home() {
       <section
         id="hero"
         className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 py-24 text-center js-fade"
-        style={{ transform: "translateY(-20px)" }}
+        style={{ transform: "translateY(-50px)" }}
       >
         <div className="absolute inset-0 hero-gradient" />
         <div className="absolute inset-0 opacity-[0.08] bg-hero-pattern" />
