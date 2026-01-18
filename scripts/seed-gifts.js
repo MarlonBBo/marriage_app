@@ -17,6 +17,7 @@ if (!connectionString) {
 }
 
 const gifts = [
+  "Fogão",
   "Geladeira",
   "Micro-ondas",
   "Airfryer",
@@ -29,7 +30,7 @@ const gifts = [
   "Jogo de panelas",
   "Panela de pressão",
   "Frigideira",
-  "Assadeiras",
+  "Forma de bolo",
   "Conjunto de facas",
   "Tábuas de corte",
   "Conchas, espátulas e pegadores",
@@ -38,9 +39,9 @@ const gifts = [
   "Copos",
   "Taças",
   "Xícaras",
-  "Jarras",
+  "Jarra de suco",
   "Jarra de café",
-  "Potes organizadores",
+  "Potes",
   "Porta-temperos",
   "Escorredor de louça",
   "Panos de prato",
@@ -71,6 +72,10 @@ const gifts = [
   "Ferro de passar",
   "Cesto para roupas",
   "Tapetes",
+  "Play",
+  "Escrivaninha",
+  "Cadeira de escritório",
+  "Mesa",
 ];
 
 async function main() {
