@@ -181,7 +181,7 @@ export default function Home() {
           </div>
           <div className="section-card">
             <p className="detail-label">Local</p>
-            <p className="detail-value">Condomínio Residencial Oreo</p>
+            <p className="detail-value">Condomínio Residencial Orion</p>
           </div>
         </div>
         <div className="mt-10 space-y-4">
